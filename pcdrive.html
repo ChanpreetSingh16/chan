@@ -13,7 +13,11 @@
 <meta charset="UTF-8">
 </head>
 <body>
-
+<script>
+if( /Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent) ) { 
+	document.getElementById("bt2").style.display = "none";
+}
+</script>
 <script src="https://chanpreetsingh16.github.io/C.Creators2022/pcdrive.js"></script>
 
 <div id="p1" class="passdiv">
@@ -71,17 +75,22 @@ function theme() {
 		document.getElementById("themeicon").innerHTML = "dark_mode";
 	}
 }
-var accc = document.getElementById("accc");
-
 function mailacc() {
-	if(accc.style.display === "none"){
-		accc.style.display = "block";
+	if(document.getElementById("accc").style.display === "none"){
+		document.getElementById("accc").style.display = "block";
+		document.getElementById("main").style.width = "calc(100% - 360px)";
+		document.getElementById("main").style.left = "10px";
+		document.getElementById("main").style.transform = "translate(0, 0)";
+		document.getElementById("main").style.animationName = "reduce";
 	}
 	else{
-		accc.style.display = "none";
+		document.getElementById("accc").style.display = "none";
+		document.getElementById("main").style.width = "calc(100% - 20px)";
+		document.getElementById("main").style.left = "50%";
+		document.getElementById("main").style.transform = "translate(-50%, 0)";
+		document.getElementById("main").style.animationName = "more";
 	}
 }
-
 </script>
 
 
@@ -92,10 +101,10 @@ function mailacc() {
 </div>
 <div class="nav2">
 <a><button id="bt1" class="navbt" title="Change Theme" onclick="theme()"><i class="material-symbols-outlined" id="themeicon">dark_mode</i></button></a>
-<!--<a><button id="bt2" class="navbt" title="Mail Yourself" onclick="mailacc()"><i class="material-symbols-outlined">message</i></button></a>-->
+<a><button id="bt2" class="navbt" title="Mail Yourself" onclick="mailacc()"><i class="material-symbols-outlined">message</i></button></a>
 <a><button id="bt3" class="navbt" title="Refresh" onclick="window.location.reload()"><i class="material-symbols-outlined">refresh</i></button></a>
 <a><button id="bt4" class="navbt" title="Close" onclick="window.close()"><i class="material-symbols-outlined">close</i></button></a>
-<a><button id="bt5" class="navbt" title="New Tab" onclick="window.open('https://chanpreetsingh16.github.io/chan/pcdrive.html', '_blank')"><i class="material-symbols-outlined">add</i></button></a>
+<a><button id="bt5" class="navbt" title="New Tab" onclick="window.open('https://chanpreet16.github.io/chan/pcdrive.html', '_blank')"><i class="material-symbols-outlined">add</i></button></a>
 </div>
 <div class="nav3">
 <img title="Chanpreet Singh" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ3hm9Zmtq9cfqIkrPivCFyiPh9V0ES2u43KB5EkozR6Og6vzvh-WDPC4CHBm5LHgYNxA&usqp=CAU" id="pp">
@@ -108,9 +117,15 @@ function mailacc() {
 
 
 
-</div>
 
 </div>
+</div>
+
+
+<div id="accc" style="display:none;">
+zfg
+</div>
+
 </body>
 <style>
 body{
@@ -293,13 +308,34 @@ input{cursor:text;}
 	justify-content:space-evenly;
 	overflow:hidden;
 	oerflow-x:auto;
+	animation-name:;
+	animation-duration:0.5s;
+	animation-iteration-count:1;
+	animation-timming-function:linear;
 }
 #box{
 	height:100px;
 	width:300px;
 	background:var(--b1);
 }
-
+#accc{
+	position:fixed;
+	top:70px;
+	right:10px;
+	/*border:1px solid#fff;*/
+	animation-name:slide;
+	animation-duration:0.5s;
+	animation-iteration-count:1;
+	animation-timming-function:linear;
+	width:330px;
+	height:calc(100% - 80px);
+	background:var(--b2);
+	border-radius:10px;
+}
+@keyframes slide{
+	from{right:-340px;}
+	to{right:10px;}
+}
 @media only screen and (max-width: 680px){
 	.nav1{
 		width:calc(100% - 41px);
@@ -349,6 +385,14 @@ input{cursor:text;}
 		transform:translate(-50%, 0);
 		width:100%;
 	}
+}
+@keyframes reduce{
+	from{width:calc(100% - 20px);}
+	to{width:calc(100% - 360px);}
+}
+@keyframes more{
+	from{width:calc(100% - 360px); left:10px; transform:translate(0, 0);}
+	to{width:calc(100% - 20px); left:10px; transform:translate(0, 0);}
 }
 </style>
 </html>
