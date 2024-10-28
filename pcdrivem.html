@@ -1,0 +1,640 @@
+<!doctype html>
+<html>
+<head>
+<title>Mahika's link drive</title>
+<link rel="icon" href="https://chanpreetsingh16.github.io/chan/ppdrive.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&family=Quicksand:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width">
+<meta charset="UTF-8">
+</head>
+<body onload="mailac()">
+<script src="https://chanpreetsingh16.github.io/C.Creators2022/pcdrive2.js"></script>
+
+<div id="p1" class="passdiv">
+<input type="password" id="in1" onfocus="this.select();" placeholder="Enter Password 2">
+<button onclick="in1type()" id="v1"><i class="material-symbols-outlined" id="e1">visibility_off</i></button><br>
+<button onclick="pass1()" id="o1">OK</button>
+<script>
+var pas1 = document.getElementById("in1");
+var e1 = document.getElementById("e1");
+var v1 = document.getElementById("v1");
+function in1type() {
+	if(pas1.type === "password"){
+		pas1.type = "text";
+		e1.innerHTML = "visibility";
+	}
+	else{
+		pas1.type = "password";
+		e1.innerHTML = "visibility_off";
+	}
+}
+</script>
+</div>
+
+<div id="p2" class="passdiv">
+<input type="password" id="in2" onfocus="this.select();" autofocus placeholder="Enter Password 1">
+<button onclick="in2type()" id="v2"><i class="material-symbols-outlined" id="e2">visibility_off</i></button><br>
+<button onclick="pass2()" id="o2">OK</button>
+<script>
+var pas2 = document.getElementById("in2");
+var e2 = document.getElementById("e2");
+var v2 = document.getElementById("v2");
+function in2type() {
+	if(pas2.type === "password"){
+		pas2.type = "text";
+		e2.innerHTML = "visibility";
+	}
+	else{
+		pas2.type = "password";
+		e2.innerHTML = "visibility_off";
+	}
+}
+</script>
+</div>
+
+<script>
+var moon = document.getElementById("themeicon");
+
+function theme() {
+	document.body.classList.toggle("light");
+	
+	if(document.body.classList.contains("light")){
+		document.getElementById("themeicon").innerHTML = "light_mode";
+	}
+	else{
+		document.getElementById("themeicon").innerHTML = "dark_mode";
+	}
+}
+function mailaccc() {
+	alert("This feature is currently disabled! To enable it, please ask the developer(Chanpreet Singh)");
+}
+function mailaccc2() {
+	alert("This feature is currently disabled! To enable it, please ask the developer(Chanpreet Singh)");
+}
+function mailacc() {
+	if(document.getElementById("accc").style.display === "none"){
+		document.getElementById("accc").style.display = "block";
+		document.getElementById("main").style.width = "calc(100% - 360px)";
+		document.getElementById("main").style.left = "10px";
+		document.getElementById("main").style.transform = "translate(0, 0)";
+		document.getElementById("main").style.animationName = "reduce";
+	}
+	else{
+		document.getElementById("accc").style.display = "none";
+		document.getElementById("main").style.width = "calc(100% - 20px)";
+		document.getElementById("main").style.left = "50%";
+		document.getElementById("main").style.transform = "translate(-50%, 0)";
+		document.getElementById("main").style.animationName = "more";
+	}
+}
+function mailacc2() {
+	if(document.getElementById("accc").style.display === "none"){
+		document.getElementById("accc").style.display = "block";
+		document.getElementById("main").style.left = "-200%";
+		document.getElementById("main").style.animationName = "reduce";
+	}
+	else{
+		document.getElementById("accc").style.display = "none";
+		document.getElementById("main").style.left = "50%";
+		document.getElementById("main").style.animationName = "more";
+	}
+}
+function closemailacc() {
+	document.getElementById("accc").style.display = "none";
+	document.getElementById("main").style.width = "calc(100% - 20px)";
+	document.getElementById("main").style.left = "50%";
+	document.getElementById("main").style.transform = "translate(-50%, 0)";
+	document.getElementById("main").style.animationName = "more";
+}
+function closemailacc2() {
+		document.getElementById("accc").style.display = "none";
+		document.getElementById("main").style.left = "50%";
+		document.getElementById("main").style.animationName = "more";
+}
+</script>
+
+
+<div id="container" class="c">
+<div class="nav1">
+<img src="https://chanpreetsingh16.github.io/chan/ppdrive.png" id="logo">
+<font id="heading">Link Drive</font>
+</div>
+<div class="nav2">
+<a><button id="bt1" class="navbt" title="Change Theme" onclick="theme()"><i class="material-symbols-outlined" id="themeicon">dark_mode</i></button></a>
+<a><button id="bt2" class="navbt" title="Mail Yourself" onclick="mailaccc()"><i class="material-symbols-outlined">message</i></button></a>
+<a><button id="bt6" class="navbt" title="Mail Yourself" onclick="mailaccc2()"><i class="material-symbols-outlined">message</i></button></a>
+<a><button id="bt3" class="navbt" title="Refresh" onclick="window.location.reload()"><i class="material-symbols-outlined">refresh</i></button></a>
+<a><button id="bt4" class="navbt" title="Close" onclick="window.close()"><i class="material-symbols-outlined">close</i></button></a>
+<a><button id="bt5" class="navbt" title="New Tab" onclick="window.open('file:///C:/Users/Chan/Downloads/q.HTML/pcdrivem.html', '_blank')"><i class="material-symbols-outlined">add</i></button></a>
+</div>
+<div class="nav3">
+<img title="Chanpreet Singh" src="https://chanpreetsingh16.github.io/chan/images.jpg" id="pp">
+<font>Mahika</font>
+</div>
+
+
+<div id="main">
+
+<div id="child">
+<div id="title">Coding Material for Riya</div>
+<div id="desc"><i class="material-symbols-outlined" style="float:left;">code</i>&nbsp;&nbsp;<font style="float:left; line-height:25px;"> Teen's Alley</font></div>
+<img src="https://yt3.ggpht.com/yti/ANjgQV_ZVeAOKceKuxvcN88KDDcNswwmvevmBu6Knxmaf1XREEg=s88-c-k-c0x00ffffff-no-rj" id="childimg">
+<a href="https://drive.google.com/drive/folders/1eP_EsuJmimncQKy2NFngDm664oAMlpEx?usp=drive_link" target="_blank"><button id="childbt"><i class="material-symbols-outlined">open_in_new</i></button></a>
+</div>
+
+
+<!--<div id="child">
+<div id="title">Coding Material</div>
+<div id="desc"></div>
+<img src="https://yt3.ggpht.com/yti/ANjgQV_ZVeAOKceKuxvcN88KDDcNswwmvevmBu6Knxmaf1XREEg=s88-c-k-c0x00ffffff-no-rj" id="childimg">
+<a href="" target="_blank"><button id="childbt"><i class="material-symbols-outlined">open_in_new</i></button></a>
+</div>-->
+
+
+</div>
+
+</div>
+
+
+<div id="accc" style="display:none;">
+
+<script>
+function ac1() {
+	document.getElementById("gmail").innerHTML = "To: ";
+	document.getElementById("gmail").style.color = "var(--color)";
+	document.getElementById("access-key").value = "";
+	document.getElementById("sendbt").style.display = "block";
+}
+</script>
+
+<div id="accch">
+<div class="accimg" id="accimg1" onclick="ac1()" title=""></div>
+</div><br>
+
+&nbsp;<font id="gmail" style="color:#f33;">Please select an account!</font><br><br><br><br>	
+
+
+<form action="https://api.web3forms.com/submit" method="POST" id="form1">
+	<center>
+
+    <input type="hidden" name="access_key" value="" style="display:none; height:0px; width:0px;" id="access-key">
+	<input type="text" id="in3" name="subject" value="" placeholder="Subject(Optional)"><br><br>
+	
+	<input type="text" name="Website Name " value=" Mahika's Link Drive" style="display:none; height:0px; width:0px;" required>
+	<input type="text" name="Website Version " value=" V1 25.10.2024 ©C.CREATORS2022" style="display:none; height:0px; width:0px;" required>
+	<textarea id="in3" placeholder="Message" maxlength="1000" name="Message " required></textarea><br><br><br>
+	<button type="submit" class="bta1" id="sendbt" style="display:none;">SEND</button><br>
+	<button type="reset"  class="bta1">RESET</button><br><br>
+	</center>
+	</form>
+	<center>
+	<button onclick="closemailacc()" class="bta1" id="closebt1">CLOSE</button>
+	<button onclick="closemailacc2()" class="bta1" id="closebt2">CLOSE</button>
+	</center>
+</div>
+
+</body>
+<style>
+body{
+	background:var(--b1);
+	color:var(--c1);
+}
+*{
+	font-family:quicksand;
+	cursor:context-menu;
+}
+*::selection{
+	background:var(--ac1);
+	color:var(--color);
+}
+input{cursor:text;}
+:root{
+	--ac1:#09c;
+	--ac2:#fa359b;
+	--ac3:#00afef;
+	--c1:#fff;
+	--b1:rgb(20,20,20);
+	--b2:rgb(10,10,10);
+	--s1:0 0 10px#000;
+	--placeholder:#262626;
+	--op:0.5;
+	--26:#262626;
+	--color:#fff;
+}
+.light{
+	--ac1:#09c;
+	--ac2:rgb(250,53,155);
+	--ac3:rgb(0,175,239);
+	--c1:rgb(20,20,20);
+	--b1:#fff;
+	--b2:rgb(210,210,210);
+	--s1:0 0 10px#000;
+	--placeholder:rgb(220,220,220);
+	--op:0.8;
+	--26:#999;
+	--color:#000;
+}
+.c{
+	display:none;
+	animation-name:fade;
+	animation-duration:1s;
+	animation-iteration-count:1;
+	animation-timming-function:linear;
+}
+#p1, #p2{
+	position:fixed;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	height:;
+	width:300px;
+	background:rgb(15,15,15);
+	padding:20px;
+	border-radius:10px;
+	box-shadow:var(--s1);
+	animation-name:fade;
+	animation-duration:1s;
+	animation-iteration-count:1;
+	animation-timming-function:linear;
+	z-index:10;
+}
+@keyframes fade{
+	from{opacity:0;}
+	to{opacity:1;}
+}
+#p1{display:none;}
+#in1, #in2{
+	width:calc(100% - 55px);
+	height:30px;
+	background:transparent;
+	border:none;
+	outline:none;
+	color:#fff;
+	font-weight:500;
+	letter-spacing:1px;
+	font-size:15px;
+	transition:0.3s;
+	border-bottom:2px solid;
+	caret-color:var(--ac1);
+	border-color:#262626;
+}
+#in1:focus{
+	border-color:var(--ac1);
+}
+#in2:focus{
+	border-color:var(--ac1);
+}
+#v1, #v2{
+	float:right;
+	height:35px;
+	margin:0 0 0 0;
+	border:none;
+	background:transparent;
+	color:var(--ac1);	
+	transition:0.5s;
+	border-radius:5px;
+}
+#v1:hover, #v2:hover{
+	background:var(--ac1);
+	color:rgb(15,15,15);
+}
+#o1, #o2{
+	height:35px;
+	width:100%;
+	margin-top:15px;
+	border:2px solid rgb(15,15,15);
+	border-radius:5px;
+	background:transparent;
+	color:var(--ac1);
+	transition:0.5s;
+	font-weight:600;
+	font-size:17px;
+	line-height:22px;
+	letter-spacing:1px;
+}
+#o1:hover, #o2:hover{
+	background:var(--ac1);
+	color:rgb(15,15,15);
+}
+
+.nav1{
+	/*border:1px solid#fff;*/
+	height:50px;
+	width:200px;
+	float:left;
+}
+.nav1 img{
+	height:50px;
+	float:left;
+}
+.nav1 font{	
+	font-size:25px;
+	line-height:50px;
+	margin-left:15px;
+	font-weight:bold;
+}
+.nav2{
+	padding:0 5px 0 5px;
+	position:fixed;
+	top:;
+	left:50%;
+	transform:translate(-50%, 0);
+	/*border:1px solid#fff;*/
+	height:50px;
+	background:var(--placeholder);
+	border-radius:25px;
+	display:flex;
+	justify-content:space-evenly;
+}
+.nav2 a button{
+	height:40px;
+	width:40px;
+	border-radius:50%;
+	border:none;
+	margin-top:5px;
+	background:transparent;
+	color:var(--color);
+	transition:0.2s;
+}
+.navbt:not(:hover){
+	opacity:var(--op);
+}
+.navbt:hover{
+	background:var(--b1);
+}
+.nav3{
+	/*border:1px solid#fff;*/
+	height:50px;
+	float:right;
+}
+#pp{
+	height:50px;
+	clip-path:circle();
+	float:left;
+}
+.nav3 font{
+	float:left;
+	line-height:50px;
+	margin-left:15px;
+	font-weight:450;
+}
+#main{
+	/*border:1px solid#fff;*/
+	position:fixed;
+	top:70px;
+	left:50%;
+	transform:translate(-50%, 0);
+	height:calc(100% - 110px);
+	width:calc(100% - 20px);
+	border-radius:10px;
+	background:var(--b2);
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-evenly;
+	overflow:auto;
+	animation-name:;
+	animation-duration:0.5s;
+	animation-iteration-count:1;
+	animation-timming-function:linear;
+	padding:30px 0 0px 0;
+}
+#child{
+	height:200px;
+	width:400px;
+	background:var(--b1);
+	margin-bottom:30px;
+	border-radius:10px;
+}
+#accc{
+	position:fixed;
+	top:70px;
+	right:10px;
+	/*border:1px solid#fff;*/
+	animation-name:slide;
+	animation-duration:0.5s;
+	animation-iteration-count:1;
+	animation-timming-function:linear;
+	width:330px;
+	height:calc(100% - 80px);
+	background:var(--b2);
+	border-radius:10px;
+}
+@keyframes slide{
+	from{right:-340px;}
+	to{right:10px;}
+}
+
+#accch{
+	/*border:1px solid#fff;*/
+	width:100%;
+	height:40px;
+	padding:5px;
+}
+.accimg{
+	height:40px;
+	width:40px;
+	float:left;
+	border-radius:50%;
+	/*border:1px solid#fff;*/
+	margin-right:10px;
+	background-size:cover;
+}
+#accimg1{background-image:url();}
+
+.bta1{
+	width:calc(100% - 55px);
+	height:35px;
+	border:2px solid var(--ac1);
+	background:transparent;
+	color:var(--ac1);	
+	transition:0.5s;
+	border-radius:5px;
+	font-size:14px;
+	font-weight:550;
+}
+.bta1:hover{
+	background:var(--ac1);
+	color:rgb(15,15,15);
+}
+#in3{
+	width:calc(100% - 55px);
+	height:30px;
+	background:transparent;
+	border:none;
+	outline:none;
+	color:var(--color);
+	font-weight:500;
+	letter-spacing:1px;
+	font-size:15px;
+	transition:0.3s;
+	border-bottom:2px solid;
+	caret-color:var(--ac1);
+	border-color:var(--26);
+}
+#in3:focus{
+	border-color:var(--ac1);
+}
+#in3:not(:placeholder-shown){
+	border-color:var(--b2);
+}
+#bt6{display:none;}
+#closebt2{display:none;}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    z-index:1;
+}
+::-webkit-scrollbar-corner {background:var(--b2);}
+/* Track */
+::-webkit-scrollbar-track {
+    background:transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(102, 102, 102,.8); 
+	border-radius:4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(51, 51, 51,.8);
+}
+
+#title{
+	font-size:25px;
+	padding-left:10px;
+	padding-top:5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height:35px;
+	width:calc(100% - 10px);
+	line-height:35px;
+	/*border:1px solid#fff;*/
+}
+
+#desc{
+	font-size:15px;
+	padding-left:10px;
+	padding-top:5px;
+	white-space: pre;
+	overflow:auto;
+	height:90px;
+	width:calc(100% - 30px);
+	background:var(--b2);
+	color:#666;
+	margin:10px 0 0 10px;
+	border-radius:5px;
+	/*border:1px solid#fff;*/
+}
+#childimg{
+	height:30px;
+	border-radius:50%;
+	margin:13px 0 0 7px;
+}
+#childbt{
+	float:right;
+	height:40px;
+	width:40px;
+	margin:7px 10px 0 0;
+	border-radius:5px;
+	border:none;
+	color:var(--color);
+	background:var(--b2);
+	transition:0.5s;
+}
+#childbt:hover{
+	background:var(--ac1);
+}
+@media only screen and (max-width: 905px){
+	#child{
+		width:calc(100% - 60px);
+	}
+}
+@media only screen and (max-width: 680px){
+	.nav1{
+		width:calc(100% - 41px);
+		margin:-8px -8px 0 -8px;
+		padding-left:8px;
+	}
+	.nav1 img{
+		height:34px;
+		margin-top:8px;
+	}
+	.nav1 font{
+		font-size:20px;
+		margin-left:3px;
+		font-weight:550;
+	}
+	.nav2{
+		postion:fixed;
+		bottom:10px;
+		left:50%;
+		transform:translate(-50%, 0);
+	}
+	.nav3{
+		width:35px;
+		margin:-8px -8px 0 -8px;
+		padding-right:8px;
+	}
+	.nav3 font{
+		display:none;
+	}
+	#main{
+		height:calc(100% - 150px);
+		top:50px;
+	}
+	#bt2{display:none;}
+	#bt6{display:block;}	
+	#closebt1{display:none;}	
+	#closebt2{display:block;}	
+	#accc{
+		position:fixed;
+		top:50px;
+		right:10px;
+		/*border:1px solid#fff;*/
+		animation-name:fade;
+		animation-duration:0.5s;
+		animation-iteration-count:1;
+		animation-timming-function:linear;
+		width:calc(100% - 20px);
+		height:calc(100% - 120px);
+		background:var(--b2);
+		border-radius:10px;
+	}
+}
+@media only screen and (max-width: 360px){
+	#p1, #p2{
+		width:calc(100% - 80px);
+	}
+}
+@media only screen and (max-width: 280px){
+	#in1, #in2{
+		width:100%;
+	}
+	#v1, #v2{
+		float:none;
+		margin:20px 0 0 50%;
+		transform:translate(-50%, 0);
+		width:100%;
+	}
+}
+@keyframes reduce{
+	from{width:calc(100% - 20px);}
+	to{width:calc(100% - 360px);}
+}
+@keyframes more{
+	from{width:calc(100% - 360px); left:10px; transform:translate(0, 0);}
+	to{width:calc(100% - 20px); left:10px; transform:translate(0, 0);}
+}
+</style>
+</html>
