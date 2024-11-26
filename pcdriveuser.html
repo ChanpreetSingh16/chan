@@ -13,17 +13,76 @@
 <meta charset="UTF-8">
 </head>
 <body>
+<div style="height:100%; width:100%; position:fixed; top:0; left:0; z-index:-10;" id="background"></div>
 <div id="pp"></div>
 
 <div id="userbox"><font id="val" style="font-size:10px;"></font><br>
 <input type="text" id="in1" onfocus="this.select();" onkeyup="user()" autofocus spellcheck="false" autocomplete="off"placeholder="Enter Username">
-<a href="" id="a1"><button id="b1"><i class="material-symbols-outlined" id="arr">arrow_forward</i></button></a>
+<a href="" id="a1"><button id="b1" onclick="checkUser()"><i class="material-symbols-outlined" id="arr">arrow_forward</i></button></a>
 </div>
 <script>
+
+const div = document.getElementById("background");
+const div2 = document.getElementById("userbox");
+const div3 = document.getElementById("pp");
+div.addEventListener("contextmenu", (e) => {
+	if (username.value === "9041694176"){}
+	else {
+		e.preventDefault()
+	}
+});
+div2.addEventListener("contextmenu", (e) => {e.preventDefault()});
+div3.addEventListener("contextmenu", (e) => {e.preventDefault()});
+
+
 var username = document.getElementById("in1");
 var pp = document.getElementById("pp");
 var a1 = document.getElementById("a1");
 var val = document.getElementById("val");
+
+document.onkeydown = (e) => {
+    if (e.key == 123) {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.key == 'U') {
+        e.preventDefault();
+    }
+	if(e.key === "C") {
+		e.preventDefault();
+		username.focus();
+		username.value = "C";
+	}
+	if(e.key === "c") {
+		e.preventDefault();
+		username.focus();
+		username.value = "C";
+	}
+	if(e.key === "M") {
+		e.preventDefault();
+		username.focus();
+		username.value = "M";
+	}
+	if(e.key === "m") {
+		e.preventDefault();
+		username.focus();
+		username.value = "M";
+	}
+	if(e.key === "Enter") {
+		event.preventDefault();
+		document.getElementById("b1").click();		
+	}
+};
+
+
 
 function user() {
 	if(username.value === "Chanpreet Singh"){
@@ -47,6 +106,9 @@ function user() {
 		val.innerHTML = "";
 		val.style.color = "#fff";
 	}
+	else if(username.value === "Chanpreet s"){
+		username.value = "Chanpreet S";
+	}
 	else{
 		pp.style.backgroundImage = "url(https://chanpreetsingh16.github.io/chan/pp.png)";
 		a1.href = "";
@@ -54,6 +116,19 @@ function user() {
 		val.style.color = "#f33";
 	}
 }
+function checkUser() {
+	if(username.value === "Chanpreet Singh"){}
+	else if(username.value === "Mahika"){}
+	else {
+		alert("Username Invalid");
+	}
+}
+username.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("b1").click();
+  }
+});
 </script>
 </body>
 <style>
