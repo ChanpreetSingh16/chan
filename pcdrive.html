@@ -4,6 +4,7 @@
 <title>Chanpreet Singh's link drive</title>
 <link rel="icon" href="https://chanpreetsingh16.github.io/chan/ppdrive.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="stylesheet" href="pcdrivecss.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -14,6 +15,20 @@
 </head>
 <body onload="mailac()">
 <script src="https://chanpreetsingh16.github.io/C.Creators2022/pcdrive.js"></script>
+<script>
+
+const div = document.getElementById("container");
+const div2 = document.getElementById("userbox");
+const div3 = document.getElementById("pp");
+div.addEventListener("contextmenu", (e) => {
+	if(username.value === "9041694176") {}
+	else{
+		e.preventDefault()
+	}
+});
+div2.addEventListener("contextmenu", (e) => {e.preventDefault()});
+div3.addEventListener("contextmenu", (e) => {e.preventDefault()});
+</script>
 
 <div id="p1" class="passdiv">
 <input type="password" id="in1" onfocus="this.select();" placeholder="Enter Password 2">
@@ -33,6 +48,12 @@ function in1type() {
 		e1.innerHTML = "visibility_off";
 	}
 }
+pas1.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("o1").click();
+  }
+});
 </script>
 </div>
 
@@ -54,6 +75,12 @@ function in2type() {
 		e2.innerHTML = "visibility_off";
 	}
 }
+pas2.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("o2").click();
+  }
+});
 </script>
 </div>
 
@@ -97,6 +124,7 @@ function mailacc2() {
 		document.getElementById("main").style.left = "50%";
 		document.getElementById("main").style.animationName = "more";
 	}
+	
 }
 function closemailacc() {
 	document.getElementById("accc").style.display = "none";
@@ -124,7 +152,7 @@ function closemailacc2() {
 <a><button id="bt6" class="navbt" title="Mail Yourself" onclick="mailacc2()"><i class="material-symbols-outlined">message</i></button></a>
 <a><button id="bt3" class="navbt" title="Refresh" onclick="window.location.reload()"><i class="material-symbols-outlined">refresh</i></button></a>
 <a><button id="bt4" class="navbt" title="Close" onclick="window.close()"><i class="material-symbols-outlined">close</i></button></a>
-<a><button id="bt5" class="navbt" title="New Tab" onclick="window.open('https://chanpreetsingh16.github.io/chan/pcdrive.html', '_blank')"><i class="material-symbols-outlined">add</i></button></a>
+<a><button id="bt5" class="navbt" title="New Tab" onclick="window.open('file:///C:/Users/Chan/Downloads/q.HTML/pcdrive.html', '_blank')"><i class="material-symbols-outlined">add</i></button></a>
 </div>
 <div class="nav3">
 <img title="Chanpreet Singh" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ3hm9Zmtq9cfqIkrPivCFyiPh9V0ES2u43KB5EkozR6Og6vzvh-WDPC4CHBm5LHgYNxA&usqp=CAU" id="pp">
@@ -136,9 +164,9 @@ function closemailacc2() {
 
 <div id="child">
 <div id="title">Bhangra</div>
-<div id="desc"><i class="material-symbols-outlined" style="float:left;">warning</i>&nbsp;&nbsp;<font style="float:left; line-height:25px;">Content not Available!</font>&nbsp;&nbsp; <!--<i class="material-symbols-outlined" style="float:left;">movie</i> <i class="material-symbols-outlined" style="float:left;">&nbsp;movie</i>--></div>
+<div id="desc"><i class="material-symbols-outlined" style="float:left;">movie</i> <i class="material-symbols-outlined" style="float:left;">&nbsp;movie</i></div>
 <img src="https://yt3.ggpht.com/yti/ANjgQV_ZVeAOKceKuxvcN88KDDcNswwmvevmBu6Knxmaf1XREEg=s88-c-k-c0x00ffffff-no-rj" id="childimg">
-<a href="https://drive.google.com/drive/u/0/folders/1N7Xk7dQn5jgarc2fN9Abrb4EWHn5kDmox" target="_blank"><button id="childbt"><i class="material-symbols-outlined">open_in_new</i></button></a>
+<a href="https://drive.google.com/drive/folders/19M8vCS6Z7xJyUG583CaVsUKqHgo5M9hkw?usp=drive_link" target="_blank"><button id="childbt"><i class="material-symbols-outlined">open_in_new</i></button></a>
 </div>
 
 <div id="child">
@@ -153,6 +181,13 @@ function closemailacc2() {
 <div id="desc"><i class="material-symbols-outlined" style="float:left;">docs</i><i class="material-symbols-outlined" style="float:left;">&nbsp;folder</i></div>
 <img src="https://yt3.ggpht.com/yti/ANjgQV_ZVeAOKceKuxvcN88KDDcNswwmvevmBu6Knxmaf1XREEg=s88-c-k-c0x00ffffff-no-rj" id="childimg">
 <a href="https://drive.google.com/drive/folders/1bBv12Uw4kTOwR0DT8BfzGnUyg31zB5PP?usp=drive_link" target="_blank"><button id="childbt"><i class="material-symbols-outlined">open_in_new</i></button></a>
+</div>
+
+<div id="child">
+<div id="title">Calender 2025</div>
+<div id="desc"><i class="material-symbols-outlined" style="float:left;">calendar_month</i>&nbsp;&nbsp;<font style="float:left; line-height:25px;"> 2025</font></div>
+<img src="https://yt3.ggpht.com/yti/ANjgQV_ZVeAOKceKuxvcN88KDDcNswwmvevmBu6Knxmaf1XREEg=s88-c-k-c0x00ffffff-no-rj" id="childimg">
+<a href="https://drive.google.com/file/d/1oJJNAxpS-sEe9gi4Vvq4GbnFOIn6b3Yl/view?usp=drive_link" target="_blank"><button id="childbt"><i class="material-symbols-outlined">open_in_new</i></button></a>
 </div>
 
 <!--<div id="child">
@@ -204,11 +239,11 @@ function ac3() {
 	<center>
 
     <input type="hidden" name="access_key" value="" style="display:none; height:0px; width:0px;" id="access-key">
-	<input type="text" id="in3" name="subject" value="" placeholder="Subject(Optional)"><br><br>
+	<input type="text" class="in3" id="in3" name="subject" value="" placeholder="Subject(Optional)"><br><br>
 	
 	<input type="text" name="Website Name " value=" Chanpreet Singh's Link Drive" style="display:none; height:0px; width:0px;" required>
 	<input type="text" name="Website Version " value=" V1 25.10.2024 ©C.CREATORS2022" style="display:none; height:0px; width:0px;" required>
-	<textarea id="in3" placeholder="Message" maxlength="1000" name="Message " required></textarea><br><br><br>
+	<textarea id="in4" class="in3" placeholder="Message" maxlength="1000" name="Message " required></textarea><br><br><br>
 	<button type="submit" class="bta1" id="sendbt" style="display:none;">SEND</button><br>
 	<button type="reset"  class="bta1">RESET</button><br><br>
 	</center>
