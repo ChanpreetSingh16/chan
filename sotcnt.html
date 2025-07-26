@@ -33,10 +33,13 @@
 				document.getElementById("date-curr").value = d;
 			}
 			function save(){
-				localStorage.setItem("sotcnt", document.getElementById("counter").value);
-				localStorage.setItem("alt-tab", document.getElementById("men-fus-tab").textContent);
-				localStorage.setItem("date-s", document.getElementById("date-curr").value);
-				window.location.reload();
+				if(confirm("Update?") === true){
+					localStorage.setItem("sotcnt", document.getElementById("counter").value);
+					localStorage.setItem("alt-tab", document.getElementById("men-fus-tab").textContent);
+					localStorage.setItem("date-s", document.getElementById("date-curr").value);
+					window.location.reload();
+				}
+				else{}
 			}
 			function reduceCount(){	
 				var i = document.getElementById("counter").value;
