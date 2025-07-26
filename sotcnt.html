@@ -1,0 +1,227 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Chanpreet Singh's Sotret Counter</title>
+		<link rel="icon" href="https://chanpreetsingh16.github.io/C.CREATORS22/16ico.ico">		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&family=Quicksand:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+	</head>
+	
+	<body onload="load()">
+		
+		<script>
+			function load(){
+				var d = new Date();	
+				if(localStorage.getItem("sotcnt")){}
+				else{
+					localStorage.setItem("sotcnt", "0");
+					localStorage.setItem("alt-tab", "Menoz");
+					localStorage.setItem("date-s", d);
+					window.location.reload();
+				}
+				document.getElementById("counter").value = localStorage.getItem("sotcnt");
+				document.getElementById("men-fus-tab").textContent = localStorage.getItem("alt-tab");
+				document.getElementById("date-saved").textContent = localStorage.getItem("date-s");
+				document.getElementById("date-curr").value = d;
+			}
+			function save(){
+				localStorage.setItem("sotcnt", document.getElementById("counter").value);
+				localStorage.setItem("alt-tab", document.getElementById("men-fus-tab").textContent);
+				localStorage.setItem("date-s", document.getElementById("date-curr").value);
+				window.location.reload();
+			}
+			function reduceCount(){	
+				var i = document.getElementById("counter").value;
+				i -= 1;
+				document.getElementById("counter").value = i;
+			}
+			function addCount(){	
+				var i = parseInt(document.getElementById("counter").value);
+				i += 1;
+				document.getElementById("counter").value = i;
+			}
+			function swap(){
+				if(document.getElementById("men-fus-tab").textContent === "Menoz"){
+					document.getElementById("men-fus-tab").textContent = "Fusys";
+				}
+				else{
+					document.getElementById("men-fus-tab").textContent = "Menoz";
+				}
+			}
+		</script>
+		
+		<button id="c-min-bt" class="cbt" onclick="reduceCount()"><i class="material-symbols-outlined">remove</i></button>
+		<input type="text" class="input" id="counter" autocapitalize="none" autocomplete="off" autocorrect="off" spellcheck="false">
+		<button id="c-add-bt" class="cbt" onclick="addCount()"><i class="material-symbols-outlined">add_2</i></button>
+		
+		<div id="men-fus-tab" class="in-like"></div>
+		<button id="swap-tab" class="sbt" onclick="swap()"><i class="material-symbols-outlined">swap_vert</i></button>
+		
+		<div id="date-saved" class="in-like-2"></div>
+		<input type="text" class="input" id="date-curr" autocapitalize="none" autocomplete="off" autocorrect="off" spellcheck="false">
+		
+		<button id="main-save" onclick="save()"><div>OK</div></button>
+		
+		<!--<div id="stamp" style="">
+		&#169;ONLINE2023 ; IMAGES & CONTENT MAY BE SUBJECT TO COPYRIGHT.<br>
+		WEBSITE CODED ON - 06:52 pm Saturday, 26 July 2025 (IST). </div>
+		</div>-->
+		
+	</body>
+	<!--25.07.2025 15-->
+	<style>
+	body{
+		background:rgb(20,20,20);
+	}
+	*::selection{
+		color:#fff;
+		background:rgba(255,255,255,.5);
+	}
+	.input{
+		outline:none;
+		border:2px solid rgba(0,0,0,0);
+		height:30px;
+		border-radius:17px;
+		background:rgb(45,45,45);
+		text-indent:10px;
+		color:#fff;
+		font-family:quicksand;
+		font-size:17px;
+		font-weight:550;
+		transition:0.3s;
+	}
+	.input:focus{
+		border-color:rgba(70,70,70);
+	}
+	#counter{
+		width:calc(100% - 120px);
+		position:fixed;
+		top:20px;
+		left:55px;
+	}
+	#c-min-bt{
+		position:fixed;
+		top:20px;
+		left:10px;
+	}
+	#c-add-bt{
+		position:fixed;
+		top:20px;
+		right:10px;
+	}
+	.cbt{
+		border:none;
+		outline:none;
+		border-radius:50%;
+		background:rgb(70,70,70);
+		color:#fff;
+		height:35px;
+		width:35px;
+		transition:0.3s;
+	}
+	.cbt:active{
+		background:rgb(85,85,85);
+	}
+	.cbt i{
+		font-variation-settings:'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+		font-size:17px;
+		line-height:30px;
+	}
+	.in-like{
+		width:calc(100% - 65px);
+		height:35px;
+		border-radius:17px;
+		background:rgb(30,30,30);
+		text-indent:10px;
+		color:#fff;
+		font-family:quicksand;
+		font-size:17px;
+		font-weight:550;
+		position:fixed;
+		top:80px;
+		left:10px;
+		line-height:35px;
+		cursor:context-menu;
+	}
+	.sbt{
+		border:none;
+		outline:none;
+		border-radius:50%;
+		background:rgb(70,70,70);
+		color:#fff;
+		height:35px;
+		width:35px;
+		transition:0.3s;
+		position:fixed;
+		top:80px;
+		right:10px;
+	}
+	.sbt:active{
+		background:rgb(85,85,85);
+	}
+	.sbt i{
+		font-variation-settings:'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+		font-size:17px;
+		line-height:30px;
+	}
+	.in-like-2{
+		width:calc(100% - 20px);
+		height:35px;
+		border-radius:17px;
+		background:rgb(30,30,30);
+		text-indent:10px;
+		color:#fff;
+		font-family:quicksand;
+		font-size:17px;
+		font-weight:550;
+		position:fixed;
+		top:145px;
+		left:10px;
+		line-height:35px;
+		cursor:context-menu;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	#date-curr{
+		width:calc(100% - 30px);
+		position:fixed;
+		top:190px;
+		left:11px;
+	}
+	#main-save{
+		height:100px;
+		width:100px;
+		border:none;
+		outline:none;
+		border-radius:50%;
+		background:linear-gradient(135deg, #f39, #036, #3f9);
+		transition:0.3s;
+		position:fixed;
+		left:50%;
+		transform:translate(-50%, 0);
+		bottom:20px;
+	}
+	#main-save div{	
+		height:70px;
+		width:70px;
+		background:rgb(20,20,20);
+		border-radius:50%;
+		float:left;
+		margin:0 0 0 9px;
+		color:#fff;
+		font-family:quicksand;
+		font-weight:bold;
+		font-size:30px;
+		line-height:67px;
+	}	
+	</style>
+</html>
