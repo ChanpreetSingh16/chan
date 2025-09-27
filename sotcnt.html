@@ -24,7 +24,7 @@
 				if(localStorage.getItem("sotcnt")){}
 				else{
 					localStorage.setItem("sotcnt", "0");
-					localStorage.setItem("alt-tab", "Clin AD");
+					localStorage.setItem("alt-tab", "Clin AD, No");
 					localStorage.setItem("date-s", d);
 					window.location.reload();
 				}
@@ -53,11 +53,11 @@
 				document.getElementById("counter").value = i;
 			}
 			function swap(){
-				if(document.getElementById("men-fus-tab").textContent === "Clin AD"){
-					document.getElementById("men-fus-tab").textContent = "Illumax";
+				if(document.getElementById("men-fus-tab").textContent === "Clin AD, No"){
+					document.getElementById("men-fus-tab").textContent = "Illumax, Yes";
 				}
 				else{
-					document.getElementById("men-fus-tab").textContent = "Clin AD";
+					document.getElementById("men-fus-tab").textContent = "Clin AD, No";
 				}
 			}
 		</script>
