@@ -47,7 +47,7 @@ document.onkeydown = (e) => {
 			document.getElementById("det").innerHTML = String(a) + "x<sup>2</sup> + " + String(b) + "x + " + String(c) + " = 0<br><br> D = " + String(D) + "<br><br> x = " + x1 + " , "  + x2;
 		}
 		else{
-			alert(1)
+			alert("Error! Discriminant less than 0.")
 		}
 	}
 </script><font id="stamp"><b>
@@ -73,7 +73,7 @@ body{
 #constin{
 	float:right;
 	width:calc(100% - 45px);
-	background:rgb(25,25,25);
+	background:rgb(40,40,40);
 	border:none;
 	outline:none;
 	border-radius:15px;
