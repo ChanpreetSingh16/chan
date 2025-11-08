@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<title>Quadratic Equation Solver</title>
+<link rel="icon" href="https://chanpreetsingh16.github.io/C.CREATORS22/16ico.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&family=Quicksand:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+document.onkeydown = (e) => {
+	if (e.key == "Enter") {
+        e.preventDefault();
+		document.getElementById("go").click();
+    }
+	else{}
+};
+</script>
+<center><font id="heading">ax<sup>2</sup> + bx + c = 0</font></center><br><br>
+<div id="ent">a,b,c <input id="constin"></div><br><br>
+<center><button id="go" onclick="go()">GO</button><br><br><br>
+
+	<font id="result"></font><br><br>
+	<p id="det"></p>
+</center>
+<script>
+	function go(){
+		var inp = document.getElementById("constin").value.split(",");
+		var a = Number(inp[0]);
+		var b = Number(inp[1]);
+		var c = Number(inp[2]);
+		var D = (b*b)-(4*a*c);
+		var x1,x2
+		if(D >= 0){
+			x1 = String(((-1*b)+(D**(1/2)))/(2*a));
+			x2 = String(((-1*b)-(D**(1/2)))/(2*a));
+					
+			document.getElementById("result").innerHTML = x1 + " , "  + x2;
+			document.getElementById("det").innerHTML = String(a) + "x<sup>2</sup> + " + String(b) + "x + " + String(c) + " = 0<br><br> D = " + String(D) + "<br><br> x = " + x1 + " , "  + x2;
+		}
+		else{
+			alert(1)
+		}
+	}
+</script><font id="stamp"><b>
+&#169;C.CREATORS2022 ; IMAGES & CONTENT MAY BE SUBJECT TO COPYRIGHT.<br>
+WEBSITE CODED ON - 11:05 am Saturday, 08 November 2025 (IST).</b></font>
+</body>
+<style>
+body{
+	background:rgb(15,15,15);
+}
+#heading{
+	color:#fff;
+	font-family:quicksand;	
+	font-size:30px;
+}
+#ent{
+	text-align:left;
+	padding-left:0px;
+	color:#fff;
+	font-family:quicksand;	
+	font-size:15px;
+}
+#constin{
+	float:right;
+	width:calc(100% - 45px);
+	background:rgb(25,25,25);
+	border:none;
+	outline:none;
+	border-radius:15px;
+	height:20px;
+	text-indent:10px;
+	color:#fff;
+	font-family:quicksand;	
+	font-size:15px;
+}
+#go{
+	height:50px;
+	width:50px;
+	border-radius:50%;
+	border:none;
+	outline:none;
+	background:rgb(25,25,25);
+	color:#fff;
+	font-family:quicksand;	
+	font-size:20px;
+	transition:0.3s;
+}
+#go:active{
+	background:rgb(35,35,35);
+}
+#result{
+	color:#fff;
+	font-family:quicksand;	
+	font-size:40px;
+}
+#det{
+	color:#fff;
+	font-family:quicksand;	
+	font-size:15px;
+}
+#stamp{
+	color:#fff;
+	font-family:quicksand;	
+	font-size:15px;
+}
+</style>
+</html>
