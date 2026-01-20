@@ -1,5 +1,20 @@
 <!doctype html>
 <html>
 <head>
-<title>Factorial finder<\title>
-</head
+<title>Factorial finder</title>
+</head>
+<body onload="ask()">
+<script>
+function ask(){
+var a = Number(prompt("Enter Number for factorial finding:"));
+var i = 2;
+var j = 1;
+for(i=a;i++){
+   j*=i
+}
+document.getElementById("div").innerHTML=j;
+}
+</script>
+<div id="div"></div>
+</body>
+</html>
