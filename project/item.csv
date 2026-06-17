@@ -1,6 +1,0 @@
-ID,Name,Quantity,Price(per unit),Date of Purchase(DD/MM/YYYY),Bill No.,Vendor ID,Company Name,Categ. ID
-I0001,k,1,1.0,16/06/2026,1,V003,k,C008
-I0002,k,1,1.0,16/06/2026,2,V003,k,C008
-I0003,k,1,1.0,16/06/2026,1,V001,k,C008
-I0004,k,1,1.0,16/06/2026,1,V003,g,C008
-I0005,j,1,1.0,16/06/2026,1,V003,k,C008
