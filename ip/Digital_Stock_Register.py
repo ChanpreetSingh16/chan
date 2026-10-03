@@ -614,7 +614,7 @@ def updstat():
         return
     stat=input("Enter the new Status of the Item  ")
     name=list(itmtab2["Name"])[l]
-    niq = list(itmtab2["Non-issued Quantity"])[l]
+    niq = list(itmtab2["Available Quantity"])[l]
     itmtab2.loc[l] = [ iid, name, niq, stat]
     itmtab2.to_csv("C:/Users/HP/Downloads/chan project ip/item2.csv", sep=",", index=False)
     print(f"Status of Item ID {iid} changed to {stat} successfully!")
@@ -630,27 +630,33 @@ def upddis():
     date=validate(date)
     l=[]
     for i in range(0,len(ids)):
-        if dates[i] == date:
+        if dates[i] == date and ids[i] == iid:
             l.append(i)
     if len(l) < 1:
         print("Entry Not Found.")
         return
     elif len(l) > 1:
         print("These entries have been found, please select one by entering the index[number in the column prior to the ID column]\n")
-        print(itmtab3[l])
+        print(itmtab3.iloc[l])
         print("\n")
         ind=int(input("Enter Index  "))
         while ind not in l:
             ind=int(input("Please enter valid index"))
     else:
         ind=l[0]
+    iids=list(itmtab2["ID"])
+    iiid=0
+    for j in range(0,len(iids)):
+        if iids[j] == iid:
+            iiid=j
+            break
     name=list(itmtab3["Name"])[ind]
-    doq=list(itmtab3["Dispossed Off Quantity"])[ind]
-    sq=list(itmtab3["Sold Quantity"])[ind]
+    doq=float(list(itmtab3["Disposed Off Quantity"])[ind])
+    sq=float(list(itmtab3["Sold Quantity"])[ind])
     tm=list(itmtab3["Money Received"])[ind]
     stvi=list(itmtab3["Sold to Vendor ID"])[ind]
     nd=list(itmtab3["Date"])[ind]
-    b=list(itmtab2["Available Quantity"])[iid]
+    b=float(list(itmtab2["Available Quantity"])[iiid])
     ask = input("Do you want to update date?[Yes(y)/No(n)]?")
     if ask == "y":
         nd = input("Enter new date")
@@ -682,15 +688,80 @@ def upddis():
                 tm = float(input("Enter new total amount in Rs.(Do not add the symbol 'Rs.' etc.)"))
             elif ask == "3":
                 tm = float(input("Enter new total amount in Rs.(Do not add the symbol 'Rs.' etc.)"))
-    #delredunit()
     itmtab3.loc[ind] = [ iid, name, doq, sq, tm, stvi, nd]
     itmtab3.to_csv("C:/Users/HP/Downloads/chan project ip/item3.csv", sep=",", index=False)
-#Remove null valued data
-#auto update quant and oher col. on update of items and dispose
+    ids=list(itmtab2["ID"])
+    for i in range(0,len(ids)):
+        if ids[i] == iid:
+            ids=i
+            break
+    cs="Extinguished"
+    if b > 0:
+        cs="OK"
+    itmtab2.loc[ids,["Available Quantity", "Current Status"]]= [b,cs]
+    itmtab2.to_csv("C:/Users/HP/Downloads/chan project ip/item2.csv", sep=",", index=False)
+    print("Dispose Off History Updated Successfully!")
+def upditm():
+    itmtab2 =  pd.read_csv("C:/Users/HP/Downloads/chan project ip/item2.csv", sep = ",")
+    itmtab1 =  pd.read_csv("C:/Users/HP/Downloads/chan project ip/item.csv", sep = ",")
+    iid=input("Enter Item ID  ")
+    ids=list(itmtab1["ID"])
+    while iid not in ids:
+        iid=input("ID not found, Please Enter CORRECT ID  ")
+    ci=input("What you want to update? [Name(1)/Quantity(2)/Price(3)/Date(4)/Bill No.(5)/Vendor ID(6)/Company Name(7)/Categ. ID(8)/Emp. ID(9)  ")
+    while ci not in "2345678910":
+        ci=input("Please Enter Correct Choice  ")
+    ind=0
+    for i in range(0,len(ids)):
+        if ids[i] == iid:
+            ind=i
+            break
+    if ci == "1":
+        name=input("Enter New Name  ")
+        itmtab1.loc[ind, "Name"] = name
+    elif ci == "2":
+        quan=float(input("Enter New Quantity  "))
+        pr=float(input("Enter New Price  "))
+        oq=itmtab1.loc[ind,"Quantity"]
+        itmtab1.loc[ind, ["Quantity", "Price"]] = [quan, pr]#update quantity and price in 2 n 3, check for bugs in this prog
+        
+    elif ci == "3":
+        pr=float(input("Enter New Price  "))
+        itmtab1.loc[ind, "Price"] = pr
+    elif ci == "4":
+        date=input("Enter New Date  ")
+        date=validate(date)
+        itmtab1.loc[ind, "Date of Purchase(DD/MM/YYYY)"] = date
+    elif ci == "5":
+        billno=str(input("Enter New Bill No.  "))
+        venid = itmtab1.loc[ind, "Vendor ID"]
+        comp = itmtab1.loc[ind, "Company Name"]     
+        name = itmtab1.loc[ind, "Name"]
+        billno=venbill(billno, venid, comp, name)
+        if billno == ";cancel":
+            print("\nThis item already exists.\n")
+            return
+        itmtab1.loc[ind, "Bill No."] = billno
+    elif ci == "6":
+        venid=input("Enter Vendor ID or ';new' to Add New Vendor ")
+        venid=valiven(venid)
+        itmtab1.loc[ind, "Vendor ID"] = venid
+    elif ci == "7":
+        cname=input("Enter New Company Name  ")
+        itmtab1.loc[ind, "Company Name"] = cname
+    elif ci == "8":
+        catid=input("Enter Category Name or ';new' to Add New Category  ")
+        catid=valicat(catid)
+        itmtab1.loc[ind, "Categ. ID"] = catid
+    elif ci == "9":
+        eid=str(input("Enter employee ID of the incharge under the department of which item is purchased  or ';new' to Add New Employee  "))
+        eid=venempit(eid)
+        itmtab1.loc[ind, ["Dept. ID", "Emp. ID"]] = eid
+    itmtab1.to_csv("C:/Users/HP/Downloads/chan project ip/item.csv", sep=",", index=False)
+    print("Purchases Updated Successfully!")
 
 
-
-#Error in updis, create uppurchase
+    
 cmd=0
 while cmd != "0":
     cmdmenu1()
