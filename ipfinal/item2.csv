@@ -1,0 +1,18 @@
+ID,Name,Available Quantity,Current Status
+I0001,Cups,0.0,Extinguished
+I0002,Cups,2.0,Broken
+I0003,k,1.0,OK
+I0004,k,1.0,OK
+I0005,j,1.0,OK
+I0006,Key Board,2.0,OK
+I0007,Paper Rim,0.0,Extinguished
+I0008,Charger,1.0,OK
+I0009,Phone,5.0,OK
+I0010,Phone Case,5.0,OK
+I0011,Concepts of Physics,50.0,OK
+I0012,Laptop,5.0,"1 defective,rest OK"
+I0013,Pens,5.0,OK
+I0014,Scale,5.0,OK
+I0015,Pencils,0.0,Extinguished
+I0016,Erasers,0.0,Extinguished
+I0017,PLATES,1.0,OK
